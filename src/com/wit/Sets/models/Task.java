@@ -31,11 +31,11 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "project='" + project + '\'' +
-                ", description='" + description + '\'' +
-                ", assignee='" + assignee + '\'' +
-                ", priority=" + priority.name() +
-                ", status=" + status.name() +
+                "project='" + project + '\n' +
+                ", description='" + description + '\n' +
+                ", assignee='" + assignee + '\n' +
+                ", priority= " + priority.name() + '\n'  +
+                ", status= " + status.name() + '\n' +
                 '}';
     }
 
