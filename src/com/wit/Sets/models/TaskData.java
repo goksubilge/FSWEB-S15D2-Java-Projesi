@@ -20,7 +20,7 @@ public class TaskData {
         this.unknownTasks = unknownTasks;
     }
 
-    // Yalnızca Set ile yapılan, dizi şeklinde gönderme ile. bana daha kolay gelen.
+    // Yalnızca Set ile yapılan, dizi şeklinde gönderme ile. bana daha kolay gelen (but doesn't work) // ClassCastExc err
     public Set<Task> getTasksExample(String taskOwner){
         if(taskOwner.equalsIgnoreCase("ann")){
             return annsTasks;
@@ -44,7 +44,7 @@ public class TaskData {
         return totals;
     }
 
-    // Alternative
+    // Alternative (but works code)
     public Set<Task> getTasks(String taskOwner){
         if(taskOwner.equalsIgnoreCase("ann")){
             return annsTasks;
@@ -65,7 +65,7 @@ public class TaskData {
         return new HashSet<>();
     }
     public Set<Task> getUnion(List<Set<Task>> toBeUnion){
-        Set<Task> total = new LinkedHashSet<>();
+        Set<Task> total = new LinkedHashSet<>();  // HashSet<>(); verseydim bir sıralama olmayacaktı
         for(Set<Task> oneTaskSeti: toBeUnion){
             total.addAll(oneTaskSeti);
         }
@@ -83,7 +83,7 @@ public class TaskData {
 
     public Set<Task> getDifference(Set<Task> firstCircle, Set<Task> secondCircle){
         Set<Task> differs = new HashSet<>(firstCircle);  // COPY
-        differs.removeAll(secondCircle);  // Neyin neyden farkı olduğuna dkkat et !
+        differs.removeAll(secondCircle);  // Neyin neyden farkı olduğuna dkkat et ! // 1. setten 2. seti siliyor.
         return differs;
     }
 }

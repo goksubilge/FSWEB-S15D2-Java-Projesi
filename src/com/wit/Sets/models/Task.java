@@ -30,12 +30,11 @@ public class Task {
     public void setStatus(Status status) {this.status = status;}
     @Override
     public String toString() {
-        return "Task{" +
-                "project='" + project + '\n' +
-                ", description='" + description + '\n' +
-                ", assignee='" + assignee + '\n' +
-                ", priority= " + priority.name() + '\n'  +
-                ", status= " + status.name() + '\n' +
+        return  "\n" + "Task{" +  assignee +
+                ", project: "+ project +
+                ", description: " + description  +
+                ", priority: " + priority.name() +
+                ", status: " + status.name() +
                 '}';
     }
 

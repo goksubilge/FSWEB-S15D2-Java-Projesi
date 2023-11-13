@@ -17,6 +17,7 @@ public class Main {
         Task task4 = new Task("java collecs", "Write Queue", "Bella", Priority.LOW, Status.ASSIGNED);
         Task task5 = new Task("java collecs", "Write Stack", "Pamela", Priority.MED, Status.IN_QUEUE);
         Task task6 = new Task("java collecs", "Write Collection", "Bilge", Priority.HIGH, Status.IN_PROGRESS);
+        Task task7 = new Task("java collecs", "Write Set", "bob", Priority.MED, Status.IN_QUEUE);
 
         Set<Task> Totalss = new HashSet<>();
         Totalss.add(task1);
@@ -25,6 +26,7 @@ public class Main {
         Totalss.add(task4);
         Totalss.add(task5);
         Totalss.add(task6);
+        Totalss.add(task7);
 
         Set<Task> anns = new LinkedHashSet<>();
         anns.add(task1);
@@ -35,21 +37,25 @@ public class Main {
         bobs.add(task2);
 
         Set<Task> carols = new LinkedHashSet<>();
-        carols.add(task2);
-        carols.add(task4);
+        carols.add(task4);  // Bella'yı Carol'a atadım. o yüzden fark aldığımda atanmayan task sonucunda  yok.
+        carols.add(task7);
 
         Set<Task> unassigned = new LinkedHashSet<>();
         unassigned.add(task2);
 
-        TaskData taskData = new TaskData(anns, bobs, carols, unassigned);
+        TaskData taskData = new TaskData(anns, bobs, carols, unassigned );
 
-        System.out.println(taskData.getTasksExample("ann"));
-        System.out.println(taskData.getTasksExample("bob"));
-        System.out.println(taskData.getTasksExample("carol"));
-        System.out.println(taskData.getTasksExample("all"));
-        System.out.println(taskData.getTasksExample("Bilge"));
-
-
-
+        System.out.println(taskData.getTasks("ann"));
+        System.out.println(taskData.getTasks("bob"));
+        System.out.println(taskData.getTasks("carol"));
+        System.out.println(taskData.getTasks("all"));
+        System.out.println(taskData.getTasks("Bilge"));
+        System.out.println(taskData.getTasks("all").size());
+        System.out.println("Differences");
+        System.out.println(taskData.getDifference(Totalss,taskData.getTasks("all")));
+        System.out.println("Intersections");
+        System.out.println("ANN + CAROL" + taskData.getIntersect(anns,carols));
+        System.out.println("ANN + BOB" + taskData.getIntersect(anns,bobs));
+        System.out.println("BOB + CAROL" + taskData.getIntersect(bobs,carols));
     }
 }
