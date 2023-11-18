@@ -17,7 +17,7 @@ public class Main {
         Task task4 = new Task("java collecs", "Write Queue", "Bella", Priority.LOW, Status.ASSIGNED);
         Task task5 = new Task("java collecs", "Write Stack", "Pamela", Priority.MED, Status.IN_QUEUE);
         Task task6 = new Task("java collecs", "Write Collection", "Bilge", Priority.HIGH, Status.IN_PROGRESS);
-        Task task7 = new Task("java collecs", "Write Set", "bob", Priority.MED, Status.IN_QUEUE);
+        Task task7 = new Task("java collecs", "Write Set", "emma", Priority.MED, Status.IN_QUEUE);
 
         Set<Task> Totalss = new HashSet<>();
         Totalss.add(task1);

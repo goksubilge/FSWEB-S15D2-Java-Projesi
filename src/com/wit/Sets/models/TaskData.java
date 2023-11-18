@@ -73,8 +73,8 @@ public class TaskData {
     }
 
     public Set<Task> getIntersect(Set<Task> firstCircle, Set<Task> secondCircle){
-        Set<Task> inters = new HashSet<>(firstCircle);  // COPY
-        inters.retainAll(secondCircle);
+        Set<Task> inters = new HashSet<>(secondCircle);  // COPY  //copy'ki veri diğerini ezer !
+        inters.retainAll(firstCircle);
         return inters;
 
 //        firstCircle.retainAll(secondCircle);
